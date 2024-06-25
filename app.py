@@ -12,7 +12,11 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-
+os.environ["AZURE_BASE_URL"] = st.secrets["AZURE_BASE_URL"]
+os.environ["AZURE_DEPLOYMENT_NAME"] =  st.secrets["AZURE_DEPLOYMENT_NAME"]
+os.environ["AZURE_MODEL_NAME"]= st.secrets["AZURE_MODEL_NAME"]
+os.environ["AZURE_OPENAI_API_VERSION"]= st.secrets["AZURE_OPENAI_API_VERSION"]
+os.environ["AZURE_OPENAI_API_KEY"]= st.secrets["AZURE_OPENAI_API_KEY"]
 
 # Load the configuration and initialize the AzureChatOpenAIModel
 config = AzureChatOpenAIModel.load_from_env_config()
